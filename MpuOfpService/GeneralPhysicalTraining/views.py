@@ -15,5 +15,5 @@ class GymnasiumDetailView(APIView):
     # Вывод конкретного зала
     def get(self, request, pk):
         gymnasium = Gymnasium.objects.get(id=pk)
-        serializer = GymnasiumDetailView(gymnasium)
+        serializer = GymnasiumDetailSerializer(gymnasium)
         return Response(serializer.data)
