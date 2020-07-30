@@ -8,7 +8,7 @@ from rest_framework import status
 class AttendanceListView(APIView):
 
     def get(self, request):
-        attendance = Attendance.objects
+        attendance = Attendance.objects # TODO: сделать фильтрацию по ФИО студента
         serializer = AttendanceListSerializer(attendance, many = True)
         return Response(serializer.data)
 
